@@ -1,3 +1,4 @@
+/* layout for search container */
 .search-container{
     display: flex;
     flex-direction: column;
@@ -5,11 +6,13 @@
     margin: 10px;
 }
 
+/* layout for entire container */
 .current-weather-container{
     display: flex;
     
 }
 
+/* weather layout */
 .current-weather-display{
     display: none;
     flex-direction: column;
@@ -20,6 +23,7 @@
     box-shadow: 5px 5px 10px;
 }
 
+/* previous searches layout */
 .history-container{
     display: flex;
     flex-direction: column;
@@ -28,6 +32,7 @@
     margin: 10px;
 }
 
+/* forecast layout */
 .forecast-display{
     display: flex;
     justify-content: space-evenly;
@@ -35,6 +40,7 @@
     width: 100%;
 }
 
+/* layout for forecast card */
 .forecast-card{
     display: flex;
     flex-direction: column;
@@ -52,6 +58,7 @@
     width: 100%;
 }
 
+/* weather icon would be too huge otherwise */
 .main-weather-icon{
     height: 75px;
     width: 75px;

@@ -10,6 +10,8 @@ console.log(searchBtn)
 var currentWeather = document.querySelector('.current-weather-display')
 console.log(currentWeather)
 
+
+// main function to run everything
 function getApi(search){
 
     var requestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${key}&units=imperial`
@@ -17,7 +19,7 @@ function getApi(search){
     var forecastRequest = `https://api.openweathermap.org/data/2.5/forecast?q=${search}&appid=${key}&units=imperial`
 
 
-
+// getting data from open weather map api
     fetch(requestUrl)
     .then(function(response){
         console.log(response)
@@ -35,6 +37,7 @@ function getApi(search){
         })
         .then(function(oneCallData){
             console.log(oneCallData)
+            // variable that carries the current weather and 5 day forecast data and put in html
             var displayWeatherText = 
                     `
                     <h1> ${data.name + ' - ' + date.toDateString()} </h1>
@@ -86,6 +89,7 @@ function getApi(search){
     printHistory();
 }
 
+// print the previous searches in html
 function printHistory(){
     var history = document.createElement('p')
     history.id = 'srchText'
@@ -93,10 +97,12 @@ function printHistory(){
     srchHistory.appendChild(history)
 }
 
+// make it so the layout doesnt look to weird
 function renderWeatherDisplay(){
     currentWeather.setAttribute('style', 'display: flex')
 }
 
+// event listener press search to load getApi
 searchBtn.addEventListener('click', function(){
     getApi(searchInput.value)
 })
